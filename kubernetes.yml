@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment-retiro
+  labels:
+    app: service-retiro
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: service-retiro
+  template:
+    metadata:
+      labels:
+        app: service-retiro
+    spec:
+      containers:
+      - name: service-retiro
+        image: antony0618/micro-retiro:v2.#{Build.BuildId}#
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: aforo.com
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-service-retiro
+spec:
+  type: LoadBalancer
+  selector:
+    app: service-retiro
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080

@@ -1,0 +1,7 @@
+org\aforo255\withdrawal\service\TransactionService.class
+org\aforo255\withdrawal\repository\TransactionRepository.class
+META-INF\panache-archive.marker
+org\aforo255\withdrawal\entity\Transaction.class
+org\aforo255\withdrawal\ExampleResource.class
+org\aforo255\withdrawal\Withdrawal.class
+org\aforo255\withdrawal\service\ITransaction.class
