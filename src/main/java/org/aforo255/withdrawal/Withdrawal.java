@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -54,5 +55,12 @@ public class Withdrawal {
 		return Response.status(Status.CREATED).entity(response).build();
 
 	}
+	
+	    @GET
+	    @Path("/hello")
+	    @Produces(MediaType.TEXT_PLAIN)
+	    public String hello() {
+	        return "hello k8s";
+	    }
 
 }
